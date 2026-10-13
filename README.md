@@ -1,4 +1,4 @@
-# Nexora Digital — projeto inicial
+# DevNexis — projeto inicial
 
 Site de apresentação para uma marca de desenvolvimento web, construído com HTML, CSS e JavaScript sem frameworks.
 
