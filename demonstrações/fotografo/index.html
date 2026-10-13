@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1eb">
+  <meta name="description" content="Portefólio de fotografia — retratos, casamentos, marcas e lugares.">
+  <title>Portefólio Fotográfico — Demonstração</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f4f1eb;--white:#fbfaf7;--ink:#24231f;--muted:#79776f;--line:#dedbd3;--rust:#9a5c42;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--max:1200px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.65 var(--sans)}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}img{display:block;max-width:100%}.wrap{width:min(var(--max),calc(100% - 56px));margin:auto}.demo{background:#3e4337;color:#f4f1eb;text-align:center;padding:7px 12px;font-size:9px;letter-spacing:.13em;text-transform:uppercase}.header{height:76px;position:sticky;top:0;z-index:9;background:#f4f1ebeb;backdrop-filter:blur(12px);border-bottom:1px solid #dedbd399}.nav{height:100%;display:flex;justify-content:space-between;align-items:center}.brand{font:600 15px var(--serif);letter-spacing:.03em}.brand small{display:block;font:9px var(--sans);letter-spacing:.17em;text-transform:uppercase;color:var(--muted);margin-top:2px}.navlinks{display:flex;gap:29px;align-items:center;font-size:11px;color:#58574f}.navlinks a:hover{color:var(--rust)}.navcta{padding:10px 15px;border:1px solid #77756d;font-size:10px;letter-spacing:.06em;text-transform:uppercase}.toggle{display:none;border:0;background:none;font-size:22px}
+    .hero{padding:45px 0 78px}.hero-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:53px;align-items:center}.eyebrow{color:var(--rust);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.18em}.hero h1{font:400 clamp(48px,7vw,87px)/.98 var(--serif);letter-spacing:-.06em;margin:18px 0 19px}.hero h1 em{font-weight:400;color:var(--rust)}.hero p{color:var(--muted);font-size:13px;max-width:330px}.hero-link{display:inline-flex;align-items:center;gap:12px;margin-top:19px;font-size:10px;letter-spacing:.11em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:8px}.hero-image{width:100%;height:520px;object-fit:cover;object-position:center 39%}.hero-photo{position:relative}.hero-photo:after{content:'LISBOA · PORTUGAL';position:absolute;right:14px;bottom:13px;color:white;font-size:9px;letter-spacing:.2em;text-shadow:0 1px 4px #000}.hero-caption{margin-top:9px;text-align:right;font-size:9px;color:var(--muted)}
+    .intro{padding:35px 0 62px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.intro h2,.section-title{font:400 clamp(32px,4.5vw,54px)/1.1 var(--serif);letter-spacing:-.045em;margin:10px 0}.intro p{color:var(--muted);font-size:12px;max-width:490px}.intro-note{display:flex;gap:15px;align-items:center;margin-top:22px}.intro-note b{font:400 32px var(--serif);color:var(--rust)}.intro-note span{font-size:10px;color:var(--muted);line-height:1.5;max-width:130px}.intro-aside{font:italic 20px/1.45 var(--serif);max-width:340px;color:#55534d}
+    .portfolio{padding:75px 0 88px}.portfolio-top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.portfolio-top p{color:var(--muted);font-size:11px;max-width:270px;margin:0 0 5px}.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:21px}.filter{background:transparent;border:1px solid var(--line);padding:7px 13px;font-size:9px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}.filter:hover,.filter.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}.gallery{columns:3;column-gap:13px}.photo{break-inside:avoid;margin:0 0 13px;position:relative;cursor:zoom-in;overflow:hidden;background:#e5e1d7}.photo img{width:100%;transition:transform .45s;object-fit:cover}.photo:hover img{transform:scale(1.025)}.photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;color:white;background:linear-gradient(transparent,#0009);opacity:0;transition:opacity .2s;font-size:10px;letter-spacing:.04em}.photo:hover figcaption,.photo:focus-visible figcaption{opacity:1}.photo[hidden]{display:none}.gallery-note{text-align:center;font-size:9px;color:var(--muted);margin:18px 0 0}
+    .statement{background:#e9e5dc;padding:54px 0}.statement-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.statement blockquote{font:400 clamp(24px,3.5vw,40px)/1.23 var(--serif);letter-spacing:-.03em;margin:0;max-width:690px}.statement blockquote span{color:var(--rust)}.statement small{font-size:9px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;color:#69675f}
+    .contact{padding:77px 0}.contact-grid{display:grid;grid-template-columns:1fr .7fr;gap:45px;align-items:end}.contact h2{font:400 clamp(38px,5vw,58px)/1.03 var(--serif);letter-spacing:-.05em;margin:11px 0 18px}.contact p{color:var(--muted);font-size:12px;max-width:400px}.contact-card{border-top:1px solid var(--line);padding-top:17px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact-card h3{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--rust);margin:0 0 4px}.contact-card p,.contact-card a{font-size:11px;color:#5f5d56;margin:0}.contact-card a:hover{color:var(--rust)}.contact-cta{display:inline-block;margin-top:21px;background:var(--ink);color:white;padding:13px 19px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.footer{background:#3e4337;color:#c7c7bd;padding:16px 0;font-size:9px}.footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .lightbox{position:fixed;inset:0;background:#141512f2;z-index:30;display:none;place-items:center;padding:26px}.lightbox.open{display:grid}.lightbox figure{margin:0;max-width:min(1050px,94vw);max-height:90vh;display:flex;flex-direction:column;align-items:center}.lightbox img{max-height:82vh;max-width:100%;object-fit:contain}.lightbox figcaption{color:#e6e2d8;font-size:11px;margin-top:10px}.lightbox button{position:absolute;border:1px solid #ffffff45;background:#171816aa;color:#fff;width:43px;height:43px;cursor:pointer}.lightbox-close{top:18px;right:18px;font-size:22px}.lightbox-prev{left:18px;top:50%;font-size:18px}.lightbox-next{right:18px;top:50%;font-size:18px}.lightbox button:hover{background:#fff;color:#171816}
+    @media(max-width:800px){.wrap{width:calc(100% - 38px)}.navlinks{display:none;position:absolute;left:0;right:0;top:76px;background:var(--paper);padding:20px 22px 25px;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.navcta{display:inline-block;text-align:center}.toggle{display:block}.hero{padding:36px 0 59px}.hero-grid{grid-template-columns:1fr;gap:27px}.hero h1{font-size:68px}.hero p{max-width:440px}.hero-image{height:420px}.intro-grid{grid-template-columns:1fr;gap:18px}.intro-aside{max-width:500px}.gallery{columns:2}.contact-grid{grid-template-columns:1fr;gap:25px}.contact-card{max-width:600px}.statement-inner{display:block}.statement small{display:block;margin-top:17px}}
+    @media(max-width:520px){.wrap{width:calc(100% - 30px)}.header{height:66px}.navlinks{top:66px}.brand{font-size:14px}.hero{padding:29px 0 48px}.hero h1{font-size:54px}.hero p{font-size:12px}.hero-image{height:320px}.intro{padding:30px 0 45px}.intro h2{font-size:36px}.intro-aside{font-size:17px}.portfolio{padding:55px 0 62px}.portfolio-top{display:block}.portfolio-top p{margin-top:12px}.section-title{font-size:39px}.filter{padding:7px 10px;font-size:8px}.gallery{column-gap:8px}.photo{margin-bottom:8px}.photo figcaption{opacity:1;padding:28px 8px 8px;font-size:8px}.statement{padding:38px 0}.statement blockquote{font-size:27px}.contact{padding:56px 0}.contact h2{font-size:42px}.contact-card{gap:15px}.lightbox{padding:12px}.lightbox-prev{left:8px}.lightbox-next{right:8px}.lightbox img{max-height:72vh}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="demo">Portefólio de demonstração · Fotografias e contactos ilustrativos</div>
+  <header class="header"><div class="wrap nav"><a class="brand" href="#inicio">Demonstração <small>Fotografia · Lisboa</small></a><button class="toggle" aria-label="Abrir navegação" aria-expanded="false">☰</button><nav class="navlinks" aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#trabalho">Portefólio</a><a href="#contactos">Contactos</a><a class="navcta" href="#contactos">Vamos conversar</a></nav></div></header>
+  <main>
+    <section class="hero" id="inicio"><div class="wrap hero-grid"><div><div class="eyebrow">Fotografia com intenção</div><h1>Histórias que<br>ficam <em>contigo.</em></h1><p>Retratos honestos, dias especiais e imagens de marca com espaço para respirar. Fotografias feitas com calma, luz natural e atenção aos detalhes.</p><a class="hero-link" href="#trabalho">Explorar o portefólio <span>↓</span></a></div><div><div class="hero-photo"><img class="hero-image" src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1400&q=88" alt="Casal num momento espontâneo durante uma sessão fotográfica"></div><div class="hero-caption">Um momento, sem poses. · Fotografia ilustrativa</div></div></div></section>
+    <section class="intro" id="sobre"><div class="wrap intro-grid"><div><div class="eyebrow">Olá, sou a pessoa por trás da câmara</div><h2>Gosto do que acontece entre uma fotografia e a seguinte.</h2><p>Trabalho com pessoas, marcas e lugares para criar imagens naturais, com personalidade e sem fórmulas. Antes de fotografar, gosto de ouvir a história — e perceber o que realmente importa.</p><div class="intro-note"><b>01</b><span>olhar atento, processo tranquilo</span></div></div><div class="intro-aside">“A melhor fotografia não interrompe o momento. Ajuda-nos a voltar a ele.”</div></div></section>
+    <section class="portfolio" id="trabalho"><div class="wrap"><div class="portfolio-top"><div><div class="eyebrow">Seleção de trabalhos</div><h2 class="section-title">Imagens com vida.</h2></div><p>Histórias diferentes, ligadas pela luz, pela presença e por momentos reais.</p></div><div class="filters" role="group" aria-label="Filtrar fotografias"><button class="filter active" data-filter="todos" aria-pressed="true">Tudo</button><button class="filter" data-filter="retratos" aria-pressed="false">Retratos</button><button class="filter" data-filter="casamentos" aria-pressed="false">Casamentos</button><button class="filter" data-filter="marcas" aria-pressed="false">Marcas</button><button class="filter" data-filter="lugares" aria-pressed="false">Lugares</button></div><div class="gallery" id="gallery">
+      <figure class="photo" data-category="casamentos" tabindex="0" role="button" aria-label="Ampliar fotografia de casamento"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85" alt="Casal de noivos num momento íntimo"><figcaption>O dia deles · Casamento</figcaption></figure>
+      <figure class="photo" data-category="retratos" tabindex="0" role="button" aria-label="Ampliar retrato"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85" alt="Retrato feminino com luz natural" loading="lazy"><figcaption>À luz da janela · Retrato</figcaption></figure>
+      <figure class="photo" data-category="lugares" tabindex="0" role="button" aria-label="Ampliar fotografia de paisagem"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=850&q=85" alt="Paisagem de montanha refletida num lago" loading="lazy"><figcaption>Silêncio de manhã · Lugares</figcaption></figure>
+      <figure class="photo" data-category="marcas" tabindex="0" role="button" aria-label="Ampliar fotografia de moda"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=850&q=85" alt="Duas pessoas a explorar uma loja de roupa" loading="lazy"><figcaption>Nova estação · Marca</figcaption></figure>
+      <figure class="photo" data-category="retratos" tabindex="0" role="button" aria-label="Ampliar retrato masculino"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85" alt="Retrato masculino ao ar livre" loading="lazy"><figcaption>Sem pressa · Retrato</figcaption></figure>
+      <figure class="photo" data-category="lugares" tabindex="0" role="button" aria-label="Ampliar fotografia de arquitetura"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=850&q=85" alt="Cidade ao anoitecer com céu em tons quentes" loading="lazy"><figcaption>Depois do sol · Lugares</figcaption></figure>
+      <figure class="photo" data-category="casamentos" tabindex="0" role="button" aria-label="Ampliar fotografia de casamento"><img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=850&q=85" alt="Celebração de casamento ao ar livre" loading="lazy"><figcaption>À volta da mesa · Casamento</figcaption></figure>
+      <figure class="photo" data-category="marcas" tabindex="0" role="button" aria-label="Ampliar fotografia de produto"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=850&q=85" alt="Composição de roupa e acessórios sobre uma superfície clara" loading="lazy"><figcaption>Texturas do dia a dia · Marca</figcaption></figure>
+    </div><p class="gallery-note">Fotografias ilustrativas. Substitui-as pelo trabalho do fotógrafo antes de publicar.</p></div></section>
+    <section class="statement"><div class="wrap statement-inner"><blockquote>“Quero que, daqui a muitos anos, ainda sintas <span>o que sentiste naquele dia.</span>”</blockquote><small>O meu propósito, em cada sessão</small></div></section>
+    <section class="contact" id="contactos"><div class="wrap contact-grid"><div><div class="eyebrow">Tens uma história para contar?</div><h2>Vamos criar algo<br>que seja teu.</h2><p>Conta-me o que estás a imaginar. Podemos conversar sobre uma sessão, um evento ou imagens para a tua marca.</p><a class="contact-cta" href="mailto:ola@demonstracao.pt?subject=Pedido%20de%20informa%C3%A7%C3%B5es">Pedir informações <span>↗</span></a></div><div class="contact-card"><div><h3>E-mail</h3><p><a href="mailto:ola@demonstracao.pt">ola@demonstracao.pt</a></p></div><div><h3>Instagram</h3><p><a href="https://instagram.com/" target="_blank" rel="noreferrer">@demonstracao.foto</a></p></div><div><h3>Base</h3><p>Lisboa, Portugal</p></div><div><h3>Disponibilidade</h3><p>Portugal · Por marcação</p></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> Demonstração Fotografia</span><span>Nome, contactos e fotografias fictícios · Projeto de demonstração</span></div></footer>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ampliada"><button class="lightbox-close" aria-label="Fechar fotografia">×</button><button class="lightbox-prev" aria-label="Fotografia anterior">←</button><figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure><button class="lightbox-next" aria-label="Fotografia seguinte">→</button></div>
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const photos = [...document.querySelectorAll('.photo')];
+    const lightbox = document.querySelector('#lightbox');
+    const largeImage = document.querySelector('#lightbox-image');
+    const caption = document.querySelector('#lightbox-caption');
+    const menu = document.querySelector('.navlinks');
+    const toggle = document.querySelector('.toggle');
+    let visiblePhotos = photos;
+    let activeIndex = 0;
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    filters.forEach(button => button.addEventListener('click', () => {
+      const category = button.dataset.filter;
+      filters.forEach(item => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      photos.forEach(photo => photo.hidden = category !== 'todos' && photo.dataset.category !== category);
+      visiblePhotos = photos.filter(photo => !photo.hidden);
+    }));
+
+    function showPhoto(index) {
+      activeIndex = (index + visiblePhotos.length) % visiblePhotos.length;
+      const photo = visiblePhotos[activeIndex];
+      const image = photo.querySelector('img');
+      largeImage.src = image.src;
+      largeImage.alt = image.alt;
+      caption.textContent = photo.querySelector('figcaption').textContent;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.querySelector('.lightbox-close').focus();
+    }
+    function closePhoto() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => showPhoto(visiblePhotos.indexOf(photo)));
+      photo.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showPhoto(visiblePhotos.indexOf(photo)); }
+      });
+    });
+    document.querySelector('.lightbox-close').addEventListener('click', closePhoto);
+    document.querySelector('.lightbox-prev').addEventListener('click', () => showPhoto(activeIndex - 1));
+    document.querySelector('.lightbox-next').addEventListener('click', () => showPhoto(activeIndex + 1));
+    lightbox.addEventListener('click', event => { if (event.target === lightbox) closePhoto(); });
+    document.addEventListener('keydown', event => {
+      if (!lightbox.classList.contains('open')) return;
+      if (event.key === 'Escape') closePhoto();
+      if (event.key === 'ArrowLeft') showPhoto(activeIndex - 1);
+      if (event.key === 'ArrowRight') showPhoto(activeIndex + 1);
+    });
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '×' : '☰';
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }));
+  </script>
+</body>
+</html>
