@@ -3,291 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A DevNexis desenvolve sites profissionais e responsivos para empresas e negócios.">
-  <meta name="theme-color" content="#080b1a">
-  <title>DevNexis — Sites que fazem crescer</title>
+  <meta name="theme-color" content="#080b14">
+  <meta name="description" content="Websites e landing pages profissionais, feitos à medida para ajudar pequenas empresas a crescer online. Conheça a DevNexis.">
+  <title>DevNexis — A sua presença digital, feita para crescer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
   <header class="site-header">
-    <nav class="nav container" aria-label="Navegação principal">
-      <a class="brand" href="#inicio" aria-label="DevNexis — início">
-        <span class="brand-mark" aria-hidden="true">D</span>
-        <span>DEV<span class="brand-light">NEXIS</span></span>
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="DevNexis, início">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-name">Dev<span>Nexis</span></span>
       </a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
-      <div class="nav-links" id="nav-links">
-        <a href="#servicos">Serviços</a>
-        <a href="#processo">Processo</a>
-        <a href="#portfolio">Portefólio</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu"><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a><a href="#processo">Como trabalhamos</a><a href="#sobre">Sobre</a>
         <a class="nav-cta" href="#contacto">Pedir orçamento <span aria-hidden="true">↗</span></a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero section container" id="inicio">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> DESENVOLVIMENTO WEB PARA PEQUENAS EMPRESAS</p>
-        <h1>O teu negócio merece um site <span class="gradient-text">à altura.</span></h1>
-        <p class="hero-intro">Criamos experiências digitais modernas que apresentam o teu negócio com clareza, profissionalismo e personalidade.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#contacto">Vamos falar do teu projeto <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="#servicos">Explorar serviços</a>
+  <main id="conteudo">
+    <section class="hero section" id="inicio">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> SOLUÇÕES DIGITAIS PARA NEGÓCIOS REAIS</p>
+          <h1>A sua empresa merece <span class="gradient-text">mais do que estar online.</span></h1>
+          <p class="hero-lead">Criamos websites claros, rápidos e pensados para transformar visitas em oportunidades. Com a estratégia certa, a sua presença digital começa a trabalhar consigo.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#contacto">Vamos falar do seu projeto <span aria-hidden="true">↗</span></a><a class="text-link" href="#servicos">Explorar serviços <span aria-hidden="true">↓</span></a></div>
+          <div class="hero-proof"><span class="proof-icon" aria-hidden="true">✦</span><p><strong>Feito à medida.</strong> Sem soluções genéricas, com atenção ao que torna o seu negócio único.</p></div>
         </div>
-        <div class="hero-proof">
-          <span class="proof-icon">✓</span><span>Design responsivo</span>
-          <span class="proof-icon">✓</span><span>Estrutura clara</span>
-          <span class="proof-icon">✓</span><span>Contacto simples</span>
+        <div class="hero-visual" aria-label="Ilustração abstrata de uma interface digital">
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+          <div class="visual-card main-card">
+            <div class="mock-top"><span class="mock-brand"><i></i> Studio / Co.</span><span class="mock-menu">☰</span></div>
+            <div class="mock-content"><span class="mock-tag">UMA IDEIA, BEM APRESENTADA</span><div class="mock-heading">Damos forma<br>ao <b>próximo.</b></div><div class="mock-copy"></div><div class="mock-copy short"></div><div class="mock-button">Conheça o nosso trabalho <span>↗</span></div></div>
+            <div class="mock-footer"><span>EST. 2024</span><span>DESIGN · DIGITAL · IMPACTO</span></div>
+          </div>
+          <div class="float-chip chip-top"><span class="chip-spark">✦</span><span><b>Mais clareza</b><small>para a sua marca</small></span></div>
+          <div class="float-chip chip-bottom"><span class="chip-check">✓</span><span><b>Pronto para crescer</b><small>em todos os ecrãs</small></span></div>
+          <span class="visual-star star-a">✳</span><span class="visual-star star-b">✧</span>
         </div>
       </div>
-      <div class="hero-visual" aria-label="Ilustração decorativa de uma janela de site">
-        <div class="glow"></div>
-        <div class="browser-card">
-          <div class="browser-top">
-            <div class="browser-dots"><i></i><i></i><i></i></div>
-            <span>oseunegocio.pt</span>
-            <span class="browser-lock">●</span>
-          </div>
-          <div class="mock-site">
-            <div class="mock-nav">
-              <span class="mock-logo">MARCA<span>.</span></span>
-              <span>Sobre&nbsp;&nbsp;&nbsp; Serviços&nbsp;&nbsp;&nbsp; Contacto</span>
-            </div>
-            <div class="mock-content">
-              <p class="mock-label">FEITO À TUA MEDIDA</p>
-              <h2>Uma ideia.<br><b>Novas possibilidades.</b></h2>
-              <p>Uma presença digital pensada para o teu negócio.</p>
-              <span class="mock-button">Saber mais&nbsp; ↗</span>
-            </div>
-            <div class="mock-orb orb-one"></div>
-            <div class="mock-orb orb-two"></div>
-          </div>
+      <div class="container hero-bottom"><span>ESTRATÉGIA</span><i></i><span>DESIGN</span><i></i><span>DESENVOLVIMENTO</span><i></i><span>ACOMPANHAMENTO</span></div>
+    </section>
+
+    <section class="intro section" id="sobre">
+      <div class="container intro-grid"><p class="eyebrow"><span class="eyebrow-line"></span> O DIGITAL, COM INTENÇÃO</p><div><h2>Pequena empresa.<br><span class="muted-text">Presença à altura.</span></h2><p class="section-copy">O seu website é muitas vezes o primeiro contacto com um futuro cliente. A DevNexis ajuda pequenas empresas a apresentar o que fazem com confiança — através de uma experiência simples, cuidada e alinhada com os seus objetivos.</p></div></div>
+      <div class="container value-row"><article><span class="value-number">01</span><div><h3>Clareza que convence</h3><p>Uma mensagem direta ajuda as pessoas certas a perceber o valor do seu negócio.</p></div></article><article><span class="value-number">02</span><div><h3>Design com propósito</h3><p>Cada página é pensada para reforçar a sua marca e facilitar o próximo passo.</p></div></article><article><span class="value-number">03</span><div><h3>Flexível consigo</h3><p>Escolha o essencial e acrescente funcionalidades quando fizer sentido.</p></div></article></div>
+    </section>
+
+    <section class="services section" id="servicos">
+      <div class="container"><div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> O QUE PODEMOS FAZER</p><h2>Uma solução certa<br><span class="muted-text">para cada etapa.</span></h2></div><p class="section-copy">Comece com o que precisa hoje. Cada projeto é orçamentado à medida e pode evoluir consigo.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="card-top"><span class="service-icon icon-blue" aria-hidden="true">⌂</span><span class="card-index">01 / WEBSITE</span></div><h3>Website institucional</h3><p>Uma presença digital sólida para apresentar a empresa, os serviços e a forma de entrar em contacto.</p><ul><li>Páginas essenciais à sua atividade</li><li>Design adaptado à identidade da marca</li><li>Experiência otimizada para telemóvel</li></ul><a class="card-link" href="#contacto" data-service="Website institucional">Pedir proposta <span aria-hidden="true">↗</span></a></article>
+          <article class="service-card featured"><div class="popular-label">MAIS COMPLETO</div><div class="card-top"><span class="service-icon icon-purple" aria-hidden="true">◈</span><span class="card-index">02 / WEBSITE</span></div><h3>Website profissional</h3><p>Uma experiência digital mais completa, construída para comunicar valor e apoiar os seus objetivos.</p><ul><li>Estrutura e conteúdo planeados em conjunto</li><li>Funcionalidades definidas por orçamento</li><li>Maior personalização e possibilidades de integração</li></ul><a class="card-link" href="#contacto" data-service="Website profissional">Pedir proposta <span aria-hidden="true">↗</span></a></article>
+          <article class="service-card"><div class="card-top"><span class="service-icon icon-cyan" aria-hidden="true">↗</span><span class="card-index">03 / CAMPANHA</span></div><h3>Landing page</h3><p>Uma página focada num produto, serviço ou campanha, com uma mensagem e uma ação bem definidas.</p><ul><li>Apresentação clara da oferta</li><li>Design focado num objetivo</li><li>Versão essencial ou profissional</li></ul><a class="card-link" href="#contacto" data-service="Landing page">Pedir proposta <span aria-hidden="true">↗</span></a></article>
+          <article class="service-card maintenance-card"><div class="card-top"><span class="service-icon icon-green" aria-hidden="true">⟳</span><span class="card-index">04 / CONTINUIDADE</span></div><h3>Manutenção</h3><p>O apoio continua depois do lançamento, com planos ajustados ao tempo e ao nível de acompanhamento de que precisa.</p><ul><li><b>Essencial:</b> blocos de 30, 60, 90 ou 120 minutos por mês</li><li><b>Profissional:</b> os mesmos blocos com acompanhamento alargado</li><li>Âmbito e frequência acordados consigo</li></ul><a class="card-link" href="#contacto" data-service="Manutenção">Pedir proposta <span aria-hidden="true">↗</span></a></article>
         </div>
-        <div class="floating-card">
-          <span class="floating-check">✓</span>
-          <span><strong>Pronto para crescer</strong><small>Em computador e telemóvel</small></span>
-        </div>
+        <div class="pricing-note"><span class="note-icon" aria-hidden="true">✳</span><p><strong>Sem preços rígidos nem surpresas.</strong> O valor depende do âmbito, das funcionalidades e do tempo de manutenção pretendido. Estamos disponíveis para negociar e preparar um orçamento personalizado para a sua realidade.</p><a href="#contacto">Fale connosco <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div class="container trust-inner">
-        <span>CLAREZA</span><i></i>
-        <span>DESIGN RESPONSIVO</span><i></i>
-        <span>DESEMPENHO</span><i></i>
-        <span>PROXIMIDADE</span>
-      </div>
-    </section>
+    <section class="process section" id="processo"><div class="container process-grid"><div class="process-heading"><p class="eyebrow"><span class="eyebrow-line"></span> SIMPLES, DO INÍCIO AO FIM</p><h2>Do primeiro<br>olá ao <span class="gradient-text">lançamento.</span></h2><p class="section-copy">Trabalhamos consigo em cada fase para que saiba o que está a acontecer e porquê.</p><a class="button button-outline" href="#contacto">Começar conversa <span aria-hidden="true">↗</span></a></div><div class="steps"><article class="step"><span>01</span><div><h3>Ouvimos</h3><p>Percebemos o seu negócio, os seus clientes e o que quer alcançar.</p></div></article><article class="step"><span>02</span><div><h3>Propomos</h3><p>Definimos o âmbito, as opções e um orçamento ajustado ao projeto.</p></div></article><article class="step"><span>03</span><div><h3>Criamos</h3><p>Desenhamos e desenvolvemos a solução com a sua participação.</p></div></article><article class="step"><span>04</span><div><h3>Lançamos e acompanhamos</h3><p>Publicamos o website e, se desejar, continuamos ao seu lado na manutenção.</p></div></article></div></div></section>
 
-    <section class="section container" id="servicos">
-      <div class="section-heading">
-        <p class="eyebrow">O QUE FAZEMOS</p>
-        <h2>Soluções digitais para <span class="gradient-text">o próximo passo.</span></h2>
-        <p>Começamos com o essencial: um site claro, útil e alinhado com os objetivos do teu negócio.</p>
-      </div>
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-icon">⌘</div>
-          <p class="card-number">01 / PRESENÇA ONLINE</p>
-          <h3>Sites para empresas</h3>
-          <p>Apresenta a tua empresa, os teus serviços e os teus contactos num site profissional.</p>
-          <a href="#contacto">Falar sobre um site <span>↗</span></a>
-        </article>
-        <article class="service-card featured">
-          <div class="service-icon">↗</div>
-          <p class="card-number">02 / CONVERSÃO</p>
-          <h3>Landing pages</h3>
-          <p>Uma página focada num serviço, campanha ou objetivo específico.</p>
-          <a href="#contacto">Planear uma página <span>↗</span></a>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">✳</div>
-          <p class="card-number">03 / ACOMPANHAMENTO</p>
-          <h3>Manutenção e melhorias</h3>
-          <p>Apoio para manter o site atualizado e melhorar a experiência ao longo do tempo.</p>
-          <a href="#contacto">Conhecer opções <span>↗</span></a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section process-section" id="processo">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">COMO TRABALHAMOS</p>
-          <h2>Simples, transparente, <span class="gradient-text">passo a passo.</span></h2>
-          <p>Um processo claro ajuda a definir expectativas antes de começar a desenvolver.</p>
-        </div>
-        <div class="process-grid">
-          <article>
-            <span class="step">01</span>
-            <h3>Perceber</h3>
-            <p>Falamos sobre o negócio, os clientes e os objetivos do site.</p>
-          </article>
-          <article>
-            <span class="step">02</span>
-            <h3>Planear</h3>
-            <p>Definimos estrutura, conteúdo, estilo visual e prioridades.</p>
-          </article>
-          <article>
-            <span class="step">03</span>
-            <h3>Construir</h3>
-            <p>Desenvolvemos e testamos a experiência em vários ecrãs.</p>
-          </article>
-          <article>
-            <span class="step">04</span>
-            <h3>Publicar</h3>
-            <p>Revemos os detalhes e preparamos o lançamento com o cliente.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container" id="portfolio">
-      <div class="section-heading">
-        <p class="eyebrow">PROJETOS DE DEMONSTRAÇÃO</p>
-        <h2>Ideias que ganham <span class="gradient-text">forma online.</span></h2>
-        <p>
-          Explora demonstrações de sites desenvolvidos pela DevNexis
-          para diferentes tipos de negócios.
-        </p>
-      </div>
-
-      <div class="portfolio-grid">
-        <!-- DEMONSTRAÇÃO DE RESTAURAÇÃO -->
-        <a
-          class="project-card project-cafe project-link"
-          href="demonstrações/restaurante/index.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Abrir demonstração de restauração num novo separador"
-        >
-          <div class="project-art">
-            <span class="art-tag">RESTAURAÇÃO</span>
-            <div class="cafe-cup">D.</div>
-            <span class="art-caption">BOM DIA,<br>BOA COMIDA.</span>
-            <span class="project-open">↗</span>
-          </div>
-          <div class="project-meta">
-            <div>
-              <h3>Demonstração de Restauração</h3>
-              <p>Carta digital, galeria e reservas demonstrativas.</p>
-            </div>
-            <span class="project-action">Ver demonstração ↗</span>
-          </div>
-        </a>
-
-        <!-- DEMONSTRAÇÃO DE BARBEARIA -->
-        <a
-          class="project-card project-barber project-link"
-          href="demonstrações/barbearia/index.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Abrir demonstração de barbearia num novo separador"
-        >
-          <div class="project-art">
-            <span class="art-tag">BARBEARIA</span>
-            <div class="barber-lines"></div>
-            <span class="art-caption">O TEU ESTILO.<br>AS TUAS REGRAS.</span>
-            <span class="project-open">↗</span>
-          </div>
-          <div class="project-meta">
-            <div>
-              <h3>Demonstração de Barbearia</h3>
-              <p>Conceito de site para barbearia.</p>
-            </div>
-            <span class="project-action">Ver demonstração ↗</span>
-          </div>
-        </a>
-
-        <!-- DEMONSTRAÇÃO DE FOTOGRAFIA -->
-        <a
-          class="project-card project-build project-link"
-          href="demonstrações/fotografo/index.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Abrir demonstração de fotografia num novo separador"
-        >
-          <div class="project-art">
-            <span class="art-tag">FOTOGRAFIA</span>
-            <div class="build-shape"></div>
-            <span class="art-caption">COM A MELHOR<br>QUALIDADE.</span>
-            <span class="project-open">↗</span>
-          </div>
-          <div class="project-meta">
-            <div>
-              <h3>Demonstração de Fotografia</h3>
-              <p>Conceito de site para fotógrafo.</p>
-            </div>
-            <span class="project-action">Ver demonstração ↗</span>
-          </div>
-        </a>
-      </div>
-
-      <p class="note">
-        Os projetos apresentados são demonstrações. Os sites e as funcionalidades
-        devem ser testados antes de serem apresentados como projetos finais.
-      </p>
-    </section>
-
-    <section class="section container contact-section" id="contacto">
-      <div class="contact-panel">
-        <div class="contact-copy">
-          <p class="eyebrow">VAMOS COMEÇAR</p>
-          <h2>Tens um projeto em mente?</h2>
-          <p>Conta-nos um pouco sobre o teu negócio. O próximo passo começa com uma conversa.</p>
-          <div class="contact-mini"><span>✦</span> Uma ideia clara é um ótimo começo.</div>
-        </div>
-
-        <form class="contact-form" id="contact-form">
-          <label for="name">O teu nome</label>
-          <input id="name" name="name" autocomplete="name" required placeholder="Como te chamas?">
-
-          <label for="business">Nome da empresa (opcional)</label>
-          <input id="business" name="business" autocomplete="organization" placeholder="Nome do negócio">
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@empresa.pt">
-
-          <label for="contact-method">Método de contacto preferido</label>
-          <select id="contact-method" name="contactMethod" required>
-            <option value="Email">Email</option>
-            <option value="Telefone">Telefone</option>
-            <option value="WhatsApp">WhatsApp</option>
-          </select>
-
-          <label for="phone">Número de telemóvel</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+351 9XX XXX XXX" aria-describedby="phone-hint">
-          <p class="form-hint" id="phone-hint">Obrigatório se preferires ser contactado por telefone ou WhatsApp.</p>
-
-          <label for="message">O que precisas?</label>
-          <textarea id="message" name="message" rows="3" required placeholder="Quero criar um site para..."></textarea>
-
-          <button class="button button-primary form-submit" type="submit">Enviar pedido <span aria-hidden="true">↗</span></button>
-          <p class="form-hint">Ao enviar, será aberta uma mensagem de email já preenchida. Terás de a enviar manualmente.</p>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
+    <section class="contact section" id="contacto"><div class="container contact-grid"><div class="contact-copy"><p class="eyebrow"><span class="eyebrow-line"></span> VAMOS FALAR?</p><h2>O próximo passo<br>começa com <span class="gradient-text">uma conversa.</span></h2><p>Conte-nos um pouco sobre o que tem em mente. A proposta é preparada à medida e os valores podem ser conversados.</p><div class="contact-assurance"><span aria-hidden="true">✧</span> Sem compromisso. Sem solução pré-fabricada.</div></div>
+      <form class="contact-form" id="quote-form">
+        <div class="form-heading"><h3>Peça um orçamento</h3><p>Preencha os seus dados e escolha como prefere ser contactado.</p></div>
+        <div class="form-row"><div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" required placeholder="Como se chama?"></div><div class="field"><label for="company">Empresa <span class="optional">(opcional)</span></label><input id="company" name="company" autocomplete="organization" placeholder="Nome da empresa"></div></div>
+        <fieldset class="field contact-choice"><legend>Método de contacto preferido</legend><div class="choice-options"><label><input type="radio" name="preferred" value="Email" checked><span>Email</span></label><label><input type="radio" name="preferred" value="Telemóvel"><span>Telemóvel</span></label></div></fieldset>
+        <div class="form-row"><div class="field"><label for="phone">Telemóvel</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+351 …"></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="nome@empresa.pt"></div></div>
+        <div class="field"><label for="service">O que procura?</label><select id="service" name="service"><option value="">Selecione uma opção</option><option>Website institucional</option><option>Website profissional</option><option>Landing page</option><option>Manutenção</option><option>Manutenção essencial</option><option>Manutenção profissional</option><option>Ainda estou a explorar</option></select></div>
+        <div class="field"><label for="message">Conte-nos sobre o projeto <span class="optional">(opcional)</span></label><textarea id="message" name="message" rows="3" placeholder="O que gostaria de criar ou melhorar?"></textarea></div>
+        <button class="button button-primary submit-button" type="submit">Preparar pedido <span aria-hidden="true">↗</span></button>
+        <p class="form-note" id="form-note" role="status">O formulário prepara uma mensagem no seu programa de email. Não envia dados para um servidor.</p>
+      </form>
+    </div></section>
   </main>
-
-  <footer class="footer">
-    <div class="container footer-top">
-      <a class="brand" href="#inicio">
-        <span class="brand-mark" aria-hidden="true">D</span>
-        <span>DEV<span class="brand-light">NEXIS</span></span>
-      </a>
-      <p>Desenvolvimento web para empresas.</p>
-      <a href="#inicio">Voltar ao topo ↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year"></span> DevNexis. Todos os direitos reservados.</span>
-      <span>Desenvolvimento web para empresas.</span>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="#inicio" aria-label="DevNexis, início"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">Dev<span>Nexis</span></span></a><p>Presença digital com propósito.</p><a class="footer-top" href="#inicio">Voltar ao topo ↑</a></div><div class="container footer-bottom"><span>© <span id="year"></span> DevNexis</span><span>Design &amp; desenvolvimento digital</span><a href="#contacto">Pedir orçamento</a></div></footer>
 </body>
 </html>
