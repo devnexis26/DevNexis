@@ -23,8 +23,10 @@
     </a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><i></i><i></i></button>
     <nav id="menu" class="menu" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
       <a href="#precos">Preços</a>
-      <a href="#processo">Como trabalhamos</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#faq">Perguntas</a>
       <a class="btn btn-small" href="#contacto">Pedir orçamento</a>
     </nav>
   </div>
@@ -45,7 +47,28 @@
     </div>
   </section>
 
-  <section class="section" id="precos">
+  <section class="strip" aria-label="Vantagens">
+    <ul class="wrap">
+      <li><b>Pronto para telemóvel</b><span>Funciona em todos os ecrãs</span></li>
+      <li><b>Preço fechado</b><span>Combinado antes de começar</span></li>
+      <li><b>Design à medida</b><span>Com a sua identidade</span></li>
+      <li><b>Apoio depois</b><span>Manutenção mensal opcional</span></li>
+    </ul>
+  </section>
+
+  <section class="section" id="servicos">
+    <div class="wrap">
+      <h2>O que fazemos pela sua empresa</h2>
+      <p class="sub">Do site mais simples ao mais completo, com tudo tratado por uma só equipa.</p>
+      <div class="plans">
+        <article class="plan svc"><h3>Websites</h3><p>Apresente a empresa, os serviços e os contactos num site profissional que os clientes encontram e usam no telemóvel.</p></article>
+        <article class="plan svc"><h3>Landing pages</h3><p>Uma página única para vender um serviço ou captar contactos, com uma mensagem e uma ação claras.</p></article>
+        <article class="plan svc"><h3>Manutenção</h3><p>Atualizamos textos, preços e imagens e corrigimos problemas, para não ter de se preocupar.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="precos">
     <div class="wrap">
       <h2>Preços claros, sem surpresas</h2>
       <p class="sub">Valores indicativos “a partir de”. O orçamento final depende do que precisa e é sempre combinado antes de começarmos.</p>
@@ -90,6 +113,18 @@
     </div>
   </section>
 
+  <section class="section" id="trabalhos">
+    <div class="wrap">
+      <h2>Veja como pode ficar o seu site</h2>
+      <p class="sub">Três conceitos de demonstração, feitos para mostrar o nosso estilo. Abra e experimente no telemóvel.</p>
+      <div class="plans">
+        <a class="work" href="demonstra%C3%A7%C3%B5es/barbearia/"><span class="thumb t1"></span><h3>Barbearia</h3><p>Marcações e serviços</p></a>
+        <a class="work" href="demonstra%C3%A7%C3%B5es/restaurante/"><span class="thumb t2"></span><h3>Restaurante</h3><p>Ementa e reservas</p></a>
+        <a class="work" href="demonstra%C3%A7%C3%B5es/fotografo/"><span class="thumb t3"></span><h3>Fotógrafo</h3><p>Portefólio e contacto</p></a>
+      </div>
+    </div>
+  </section>
+
   <section class="section alt" id="processo">
     <div class="wrap">
       <h2>Do primeiro contacto ao lançamento</h2>
@@ -102,7 +137,17 @@
     </div>
   </section>
 
-  <section class="section" id="contacto">
+  <section class="section" id="faq">
+    <div class="wrap faq">
+      <h2>Perguntas frequentes</h2>
+      <details><summary>Preciso de ter os textos e as fotografias prontos?</summary><p>Não. Ajudamos a organizar o conteúdo e usamos o que já tem. Se faltar alguma coisa, dizemos-lhe o que é preciso.</p></details>
+      <details><summary>O site funciona no telemóvel?</summary><p>Sim. Todos os sites são feitos primeiro para telemóvel e depois adaptados ao computador.</p></details>
+      <details><summary>Posso pedir alterações depois de publicado?</summary><p>Pode. Com a manutenção mensal, as alterações ficam incluídas no tempo do plano que escolher.</p></details>
+      <details><summary>O preço pode mudar durante o projeto?</summary><p>Não. O valor final é combinado consigo antes de começarmos, e qualquer extra só avança com a sua aprovação.</p></details>
+    </div>
+  </section>
+
+  <section class="section alt" id="contacto">
     <div class="wrap contact">
       <div>
         <h2>Fale connosco sobre o seu projeto</h2>
@@ -120,7 +165,7 @@
             <option>Landing page</option><option>Website essencial</option><option>Website profissional</option><option>Manutenção</option><option>Ainda estou a decidir</option>
           </select>
         </label>
-        <label>Mensagem <span class="opt">(opcional)</span><textarea name="message" rows="3"></textarea></label>
+        <label><span>Mensagem <span class="opt">(opcional)</span></span><textarea name="message" rows="3"></textarea></label>
         <button class="btn" type="submit">Enviar pedido</button>
         <p class="note" id="form-note" role="status"></p>
       </form>
