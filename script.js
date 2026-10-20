@@ -1,64 +1,47 @@
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('#site-nav');
+// >>> Coloca aqui o email que vai receber os pedidos de orçamento <<<
+const EMAIL_DESTINO = '';
 
-if (menuButton && navigation) {
-  menuButton.addEventListener('click', () => {
-    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!isOpen));
-    menuButton.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
-    navigation.classList.toggle('is-open', !isOpen);
-  });
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('#menu');
 
-  navigation.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', 'Abrir menu');
-      navigation.classList.remove('is-open');
-    });
-  });
+function setMenu(open) {
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  menu.classList.toggle('open', open);
 }
+burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
 document.querySelectorAll('[data-service]').forEach((link) => {
   link.addEventListener('click', () => {
-    const serviceField = document.querySelector('#service');
-    if (serviceField) serviceField.value = link.dataset.service;
+    document.querySelector('#service').value = link.dataset.service;
   });
 });
 
-const year = document.querySelector('#year');
-if (year) year.textContent = new Date().getFullYear();
+document.querySelector('#year').textContent = new Date().getFullYear();
 
 const form = document.querySelector('#quote-form');
-const formNote = document.querySelector('#form-note');
+const note = document.querySelector('#form-note');
 
-if (form) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const d = new FormData(form);
+  const name = (d.get('name') || '').trim();
+  const email = (d.get('email') || '').trim();
+  const phone = (d.get('phone') || '').trim();
 
-    const data = new FormData(form);
-    const preferred = data.get('preferred');
-    const preferredContact = preferred === 'Email' ? data.get('email') : data.get('phone');
-    if (!preferredContact) {
-      const field = preferred === 'Email' ? document.querySelector('#email') : document.querySelector('#phone');
-      field.setCustomValidity(`Indique o seu ${preferred === 'Email' ? 'email' : 'telemóvel'} para podermos contactar por ${preferred.toLowerCase()}.`);
-      field.reportValidity();
-      field.addEventListener('input', () => field.setCustomValidity(''), { once: true });
-      return;
-    }
+  if (!name) { note.textContent = 'Indique o seu nome.'; form.elements.name.focus(); return; }
+  if (!email && !phone) { note.textContent = 'Indique um email ou um telemóvel para o podermos contactar.'; form.elements.email.focus(); return; }
 
-    const subject = `Pedido de orçamento DevNexis${data.get('service') ? ` — ${data.get('service')}` : ''}`;
-    const body = [
-      `Nome: ${data.get('name')}`,
-      `Empresa: ${data.get('company') || 'Não indicada'}`,
-      `Método de contacto preferido: ${preferred}`,
-      `Telemóvel: ${data.get('phone') || 'Não indicado'}`,
-      `Email: ${data.get('email') || 'Não indicado'}`,
-      `Serviço: ${data.get('service') || 'A definir'}`,
-      `Projeto: ${data.get('message') || 'Sem detalhes adicionais'}`
-    ].join('\n');
+  const subject = `Pedido de orçamento${d.get('service') ? ' — ' + d.get('service') : ''}`;
+  const body = [
+    `Nome: ${name}`,
+    `Email: ${email || 'Não indicado'}`,
+    `Telemóvel: ${phone || 'Não indicado'}`,
+    `Serviço: ${d.get('service') || 'A decidir'}`,
+    `Mensagem: ${(d.get('message') || '').trim() || 'Sem detalhes adicionais'}`
+  ].join('\n');
 
-    if (formNote) formNote.textContent = 'A abrir o seu programa de email com a mensagem preparada. O pedido só será enviado quando indicar um endereço de destino e carregar em enviar.';
-    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  });
-}
+  note.textContent = 'A abrir o seu programa de email. Carregue em enviar para concluir o pedido.';
+  window.location.href = `mailto:${EMAIL_DESTINO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
