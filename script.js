@@ -1,5 +1,5 @@
 // >>> Coloca aqui o email que vai receber os pedidos de orçamento <<<
-const EMAIL_DESTINO = '';
+const EMAIL_DESTINO = 'geral.devnexis@outlook.pt';
 
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('#menu');
