@@ -1,47 +1,104 @@
-// >>> Coloca aqui o email que vai receber os pedidos de orçamento <<<
-const EMAIL_DESTINO = 'geral.devnexis@outlook.pt';
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#site-nav');
 
-const burger = document.querySelector('.burger');
-const menu = document.querySelector('#menu');
+document.documentElement.classList.add('has-js');
+const revealItems = document.querySelectorAll('.reveal');
 
-function setMenu(open) {
-  burger.setAttribute('aria-expanded', String(open));
-  burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-  menu.classList.toggle('open', open);
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -35px 0px' });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
 }
-burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
-menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+
+if (menuButton && navigation) {
+  menuButton.addEventListener('click', () => {
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
+    navigation.classList.toggle('is-open', !isOpen);
+  });
+
+  navigation.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menu');
+      navigation.classList.remove('is-open');
+    });
+  });
+}
 
 document.querySelectorAll('[data-service]').forEach((link) => {
   link.addEventListener('click', () => {
-    document.querySelector('#service').value = link.dataset.service;
+    const serviceField = document.querySelector('#service');
+    if (serviceField) serviceField.value = link.dataset.service;
   });
 });
 
-document.querySelector('#year').textContent = new Date().getFullYear();
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
 
 const form = document.querySelector('#quote-form');
-const note = document.querySelector('#form-note');
+const formNote = document.querySelector('#form-note');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const d = new FormData(form);
-  const name = (d.get('name') || '').trim();
-  const email = (d.get('email') || '').trim();
-  const phone = (d.get('phone') || '').trim();
+if (form) {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
 
-  if (!name) { note.textContent = 'Indique o seu nome.'; form.elements.name.focus(); return; }
-  if (!email && !phone) { note.textContent = 'Indique um email ou um telemóvel para o podermos contactar.'; form.elements.email.focus(); return; }
+    const data = new FormData(form);
+    const preferred = data.get('preferred');
+    const preferredContact = preferred === 'Email' ? data.get('email') : data.get('phone');
 
-  const subject = `Pedido de orçamento${d.get('service') ? ' — ' + d.get('service') : ''}`;
-  const body = [
-    `Nome: ${name}`,
-    `Email: ${email || 'Não indicado'}`,
-    `Telemóvel: ${phone || 'Não indicado'}`,
-    `Serviço: ${d.get('service') || 'A decidir'}`,
-    `Mensagem: ${(d.get('message') || '').trim() || 'Sem detalhes adicionais'}`
-  ].join('\n');
+    if (!preferredContact) {
+      const field = preferred === 'Email'
+        ? document.querySelector('#email')
+        : document.querySelector('#phone');
 
-  note.textContent = 'A abrir o seu programa de email. Carregue em enviar para concluir o pedido.';
-  window.location.href = `mailto:${EMAIL_DESTINO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
+      field.setCustomValidity(
+        `Indique o seu ${preferred === 'Email' ? 'email' : 'telemóvel'} para podermos contactar por ${preferred.toLowerCase()}.`
+      );
+      field.reportValidity();
+      field.addEventListener('input', () => field.setCustomValidity(''), { once: true });
+      return;
+    }
+
+    const subject = `Pedido de orçamento DevNexis${data.get('service') ? ` — ${data.get('service')}` : ''}`;
+
+    const body = [
+      `Nome: ${data.get('name')}`,
+      `Empresa: ${data.get('company') || 'Não indicada'}`,
+      `Método de contacto preferido: ${preferred}`,
+      `Telemóvel: ${data.get('phone') || 'Não indicado'}`,
+      `Email: ${data.get('email') || 'Não indicado'}`,
+      `Serviço: ${data.get('service') || 'A definir'}`,
+      `Projeto: ${data.get('message') || 'Sem detalhes adicionais'}`
+    ].join('\n');
+
+    if (formNote) {
+      formNote.textContent = 'A abrir o Gmail com o pedido preparado. Para concluir, reveja a mensagem e carregue em Enviar.';
+    }
+
+    const gmailCompose = new URL('https://mail.google.com/mail/');
+    gmailCompose.searchParams.set('view', 'cm');
+    gmailCompose.searchParams.set('fs', '1');
+    gmailCompose.searchParams.set('to', 'geral.devnexis@outlook.pt');
+    gmailCompose.searchParams.set('su', subject);
+    gmailCompose.searchParams.set('body', body);
+
+    const composeWindow = window.open(gmailCompose.toString(), '_blank');
+
+    if (composeWindow) {
+      composeWindow.opener = null;
+    } else {
+      window.location.assign(gmailCompose.toString());
+    }
+  });
+}
